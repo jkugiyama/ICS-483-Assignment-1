@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from myImageFilter import myImageFilter
+from myEdgeFilter import myEdgeFilter
 
 # Read the image
 img0 = cv2.imread('data/img01.jpg', cv2.IMREAD_GRAYSCALE)
@@ -15,10 +15,10 @@ print("Image shape:", img0.shape)
 print("Filter shape:", h.shape)
 
 # Apply the filter
-img1 = myImageFilter(img0, h)
+img1 = myEdgeFilter(img0, sigma=1.0)
 
 # Save the result
-cv2.imwrite('ec/filtered1.jpg', np.uint8(img1 * 255))
+cv2.imwrite('ec/edges1.jpg', np.uint8(img1 * 255))
 
 print("Filtering complete!")
-print("Saved result as ec/filtered1.jpg")
+print("Saved edges as ec/edges1.jpg")
