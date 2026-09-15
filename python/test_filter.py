@@ -3,7 +3,7 @@ import numpy as np
 from myImageFilter import myImageFilter
 
 # Read the image
-img0 = cv2.imread('../data/img01.jpg', cv2.IMREAD_GRAYSCALE)
+img0 = cv2.imread('data/img02.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Convert to float
 img0 = np.float32(img0) / 255.0
@@ -18,7 +18,7 @@ print("Filter shape:", h.shape)
 img1 = myImageFilter(img0, h)
 
 # Save the result
-cv2.imwrite('filtered.jpg', np.uint8(img1 * 255))
+cv2.imwrite('ec/filtered2.jpg', np.uint8(img1 * 255))
 
 print("Filtering complete!")
-print("Saved result as filtered.jpg")
+print("Saved result as ec/filtered2.jpg")
