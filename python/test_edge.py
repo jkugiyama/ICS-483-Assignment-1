@@ -3,7 +3,7 @@ import numpy as np
 from myEdgeFilter import myEdgeFilter
 
 # Read the image
-img0 = cv2.imread('data/img01.jpg', cv2.IMREAD_GRAYSCALE)
+img0 = cv2.imread('data/img05.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Convert to float
 img0 = np.float32(img0) / 255.0
@@ -18,7 +18,7 @@ print("Filter shape:", h.shape)
 img1 = myEdgeFilter(img0, sigma=1.0)
 
 # Save the result
-cv2.imwrite('ec/edges1.jpg', np.uint8(img1 * 255))
+cv2.imwrite('ec/edges5.jpg', np.uint8(img1 * 255))
 
 print("Filtering complete!")
-print("Saved edges as ec/edges1.jpg")
+print("Saved edges as ec/edges5.jpg")
