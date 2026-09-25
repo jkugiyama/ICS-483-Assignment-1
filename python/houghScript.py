@@ -71,7 +71,7 @@ for file in os.listdir(datadir):
         
         # display line segment results from cv2.HoughLinesP in green
         for line in lines:
-            coords = line[0]
+            coords = line
             cv2.line(img_lines, (coords[0], coords[1]), (coords[2], coords[3]), \
                      (0, 255, 0), 1)
 
