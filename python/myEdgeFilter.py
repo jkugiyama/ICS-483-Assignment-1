@@ -2,8 +2,6 @@ import numpy as np
 from scipy.signal.windows import gaussian # For signal.gaussian function
 from myImageFilter import myImageFilter 
 
-from myImageFilter import myImageFilter
-
 def myEdgeFilter(img0, sigma):
     # YOUR CODE HERE
     # Create Gaussian smoothing filter
