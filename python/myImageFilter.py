@@ -5,7 +5,6 @@ def myImageFilter(img0, h):
     # Get image dimensions
     img_height, img_width = img0.shape
 
-    # Get filter dimensions
     h_height, h_width = h.shape
 
     # Calculate padding

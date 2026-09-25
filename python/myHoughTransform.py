@@ -1,10 +1,7 @@
 import numpy as np
 
 def myHoughTransform(Im, rhoRes, thetaRes):
-    # YOUR CODE HERE
-
     # Get image dimensions
-
     M, N = Im.shape
 
     # Create theta and rho scales
@@ -25,8 +22,6 @@ def myHoughTransform(Im, rhoRes, thetaRes):
         (len(rhoScale), len(thetaScale)),
         dtype=np.float32
     )
-
-    # Find pixels above the threshold
 
     y, x = np.nonzero(Im)
 

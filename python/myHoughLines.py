@@ -2,14 +2,9 @@ import numpy as np
 import cv2  # For cv2.dilate function
 
 def myHoughLines(H, nLines):
-    # YOUR CODE HERE
-
-    # Create a copy of the Hough accumulator
-
     hough = H.copy()
 
     # Non-maximum suppression
-
     # Size of neighborhood used to find local maxima
     neighborhood_size = 21
 
@@ -19,13 +14,13 @@ def myHoughLines(H, nLines):
     )
 
     # Find the maximum value in each neighborhood
+    # Using OpenCV's dilate function to find local maxima
     local_max = cv2.dilate(hough, kernel)
 
     # Keep only pixels that are equal to the local maximum
     peaks = np.where(hough == local_max, hough, 0)
 
     # Find the strongest peaks
-
     # Flatten the accumulator
     flat_peaks = peaks.ravel()
 

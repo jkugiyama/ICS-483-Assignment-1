@@ -3,10 +3,7 @@ from scipy.signal.windows import gaussian # For signal.gaussian function
 from myImageFilter import myImageFilter 
 
 def myEdgeFilter(img0, sigma):
-    # YOUR CODE HERE
     # Create Gaussian smoothing filter
-
-    # Size of Gaussian filter
     hsize = 2 * int(np.ceil(3 * sigma)) + 1
 
     # Create 1D Gaussian kernels
@@ -19,11 +16,9 @@ def myEdgeFilter(img0, sigma):
     h = np.outer(h1, h1)
 
     # Smooth the image
-
     img_smooth = myImageFilter(img0, h)
 
     # Create Sobel filters
-
     # Sobel filter for x direction
     sobel_x = np.array([
         [-1, 0, 1],
@@ -59,17 +54,12 @@ def myEdgeFilter(img0, sigma):
 
     img1 = np.zeros_like(magnitude)
 
-    # Get image dimensions
     rows, cols = magnitude.shape
 
     # Ignore the outermost pixels
     for i in range(1, rows - 1):
         for j in range(1, cols - 1):
-
-            # Current gradient angle
             a = angle[i, j]
-
-            # Determine which direction to compare
 
             if (0 <= a < 22.5) or (157.5 <= a <= 180):
                 # 0 degrees
