@@ -41,8 +41,4 @@ def myHoughLines(H, nLines):
         peaks.shape
     )
 
-    # Convert to column vectors
-    rhos = rhos.reshape(-1, 1)
-    thetas = thetas.reshape(-1, 1)
-
     return rhos, thetas
