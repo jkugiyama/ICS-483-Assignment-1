@@ -7,8 +7,7 @@ from myHoughLines import myHoughLines
 
 
 # Read image
-
-img0 = cv2.imread('data/img10.jpg', cv2.IMREAD_GRAYSCALE)
+img0 = cv2.imread('../data/img10.jpg', cv2.IMREAD_GRAYSCALE)
 
 if img0 is None:
     print("Could not load image")
@@ -21,7 +20,6 @@ print("Image shape:", img0.shape)
 
 
 # Parameters
-
 sigma = 2
 threshold = 0.03
 
@@ -32,7 +30,6 @@ nLines = 10
 
 
 # Edge detection
-
 img_edge = myEdgeFilter(img0, sigma)
 
 # Threshold edge image
@@ -49,7 +46,6 @@ img_hough, rhoScale, thetaScale = myHoughTransform(
 
 
 # Find strongest Hough lines
-
 rhos, thetas = myHoughLines(
     img_hough,
     nLines
@@ -57,7 +53,6 @@ rhos, thetas = myHoughLines(
 
 
 # Print results
-
 print("Rho indices:")
 print(rhos)
 
@@ -66,10 +61,10 @@ print(thetas)
 
 
 # Save Hough accumulator
-
 cv2.imwrite(
-    'ec/houghlines10.jpg',
+    'results/houghlines10.jpg',
     np.uint8(255 * img_hough / img_hough.max())
 )
 
-print("Hough transform complete!")
+print("Hough transform complete")
+print("Saved result as results/houghlines10.jpg")

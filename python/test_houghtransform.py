@@ -3,7 +3,7 @@ import numpy as np
 from myHoughTransform import myHoughTransform
 
 # Read the image
-img0 = cv2.imread('data/img10.jpg', cv2.IMREAD_GRAYSCALE)
+img0 = cv2.imread('../data/img10.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Convert to float
 img0 = np.float32(img0) / 255.0
@@ -18,7 +18,7 @@ print("Filter shape:", h.shape)
 img1, rhoScale, thetaScale = myHoughTransform(img0, rhoRes=1.0, thetaRes=0.01)
 
 # Save the result
-cv2.imwrite('ec/hough10.jpg', np.uint8(img1 * 255))
+cv2.imwrite('results/hough10.jpg', np.uint8(img1 * 255))
 
-print("Filtering complete!")
-print("Saved edges as ec/hough10.jpg")
+print("Filtering complete")
+print("Saved edges as results/hough10.jpg")
